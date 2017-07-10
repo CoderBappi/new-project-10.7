@@ -1,0 +1,60 @@
+﻿@model global::RestaurentApp.Models.Member
+@{
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MemberEntry</title>
+</head>
+<body>
+<div>
+    @using (Html.BeginForm("Member", "Member"))
+    {
+        <table>
+            <tr>
+                <td>@Html.LabelFor(c => c.Code)</td>
+                <td>@Html.TextBoxFor(c => c.Code)</td>
+                <td>@Html.ValidationMessageFor(c => c.Code)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.Name)</td>
+                <td>@Html.TextBoxFor(c => c.Name)</td>
+                <td>@Html.ValidationMessageFor(c => c.Name)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.Email)</td>
+                <td>@Html.TextBoxFor(c => c.Email)</td>
+                <td>@Html.ValidationMessageFor(c => c.Email)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.ContactNo)</td>
+                <td>@Html.TextBoxFor(c => c.ContactNo)</td>0
+              <td>@Html.ValidationMessageFor(c => c.ContactNo)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.Type)</td>
+                <td>@Html.DropDownListFor(c => c.Type, ViewBag.Members as IEnumerable<SelectListItem>, "Select list ......")</td>
+                <td>@Html.ValidationMessageFor(c => c.Code)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.StName)</td>
+                <td>@Html.DropDownListFor(c => c.StName, ViewBag.Members as IEnumerable<SelectListItem>, "Select list ......")</td>
+                <td>@Html.ValidationMessageFor(c => c.Code)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Save"/></td>
+            </tr>
+        </table>
+        <a href="Home">Home</a>
+    }
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
